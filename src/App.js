@@ -66,6 +66,7 @@ function App() {
   }
 
   function handleResult() {
+    // eslint-disable-next-line no-eval
     const operation = eval(calculation)
     setResult(operation)
     setCalculation(operation)
