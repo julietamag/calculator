@@ -10,8 +10,6 @@ function App() {
 
   function handleOperator(e) {
     const operator = e.target.value;
-    console.log(calculation)
-    
     // do not let more than one operand
     if (calculation[-1] === operator) {
       return
@@ -43,7 +41,6 @@ function App() {
     let operando = e.target.value
     if(currentNum === '0' && operando === '0'){
         return;
-      
     }
    
     //if last value clicked was an operator, do not set the current number with the operator 
@@ -55,8 +52,6 @@ function App() {
       setCurrentNum(currentNum + operando)
       setCalculation(calculation + operando)
     }
-
-
   }
 
   function handleAC() {
@@ -69,7 +64,7 @@ function App() {
     // eslint-disable-next-line no-eval
     const operation = eval(calculation)
     setResult(operation)
-    setCalculation(operation)
+    setCurrentNum(operation)
   }
 
   return (
