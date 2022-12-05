@@ -1,38 +1,103 @@
+
+@font-face{
+  font-family:'digital-clock-font';
+  src: url('/public/technology.bold.ttf');
+ }
+
+* {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #E9EBF8;
+}
+
 .App {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#calculator {
+  width: 20rem;
+  background-color: #080708;
+  border: 2px solid black;
+  padding: .2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#display-container {
+  background-color: black;
+  width: 100%;
+  height: 4.5rem;
+  color: white;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+}
+
+#display, #display-small {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  padding-right: 1rem;
+  background-color: #080708;
+  font-family:'digital-clock-font';
+}
+
+#display-small {
+  height: 2rem;
+  font-size: 1.3rem;
+  color: orange;
+}
+
+#display {
+  height: 2.5rem;
+  font-size: 1.8rem;
+}
+
+#buttons-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: .5rem;
+  max-width: 25rem;
+  min-height: 20rem;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #B4B8C5;
+  padding: .5rem;
+}
+
+.button{
+  background-color: #454955;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: .5rem;
+  color: white;
+  border: none;
+ font-weight: bolder;
+}
+
+.button:hover{
+  border: 1px solid white;
+  font-size: 1.3rem;}
+
+#clear{
+  grid-column-end: span 2;
+  background-color: #F8333C;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#zero{
+  grid-column-end: span 2;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#equals{
+  grid-row-end: span 2;
+  background-color: #3772FF;
 }
+
